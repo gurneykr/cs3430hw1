@@ -19,8 +19,14 @@ class DerivUnitTests(unittest.TestCase):
         fex = prod(mult1=make_const(6.0),
                    mult2=make_pwr('x', 3.0))
         drv = deriv(fex)
+        print(drv)
+
         assert not drv is None
         drvf = tof(drv)
+        print("deriv(1):", drvf(1))
+        print("deriv(2):", drvf(2))
+        print("deriv(3):", drvf(3))
+        print("deriv(4):", drvf(4))
         assert not drvf is None
         gt = lambda x: 18*(x**2)
         err = 0.00001

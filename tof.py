@@ -203,11 +203,11 @@ def plus_tof(expr):
             return f
         elif isinstance(elt2, pwr):
             def f(x):
-                return pwr_tof(elt1)(x)  + pwr_tof(elt2)(x)
+                return pwr_tof(elt1)(x) + pwr_tof(elt2)(x)
             return f
         elif isinstance(elt2, plus):
             def f(x):
-                return pwr_tof(elt1)(x)  + plus_tof(elt2)(x)
+                return pwr_tof(elt1)(x) + plus_tof(elt2)(x)
             return f
     elif isinstance(elt1, plus):
         if isinstance(elt2, const):
@@ -224,5 +224,5 @@ def plus_tof(expr):
             return f
         elif isinstance(elt2, plus):
             def f(x):
-                return plus_tof(elt1)(x)  + plus_tof(elt2)(x)
+                return plus_tof(elt1)(x) + plus_tof(elt2)(x)
             return f
