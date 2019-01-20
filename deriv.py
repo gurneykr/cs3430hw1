@@ -31,23 +31,23 @@ def const_deriv(c):
     return const(val=0.0)
 
 def plus_deriv(s):
-    return deriv(s.get_elt1()) + deriv(s.get_elt2())
+    return plus(deriv(s.get_elt1()), deriv(s.get_elt2()))
 
 def pwr_deriv(p):
     assert isinstance(p, pwr)
     b = p.get_base()
     d = p.get_deg()
-    if isinstance (b,var):
+    if isinstance(b, var):
         if isinstance(d, const):
            return prod(make_const(d.get_val()-1), b)
         else:
             raise Exception('pwr_deriv: case 1: ' + str(p))
-    if isinstance(b, pwr):#think this is (x^2 (^3))
+    if isinstance(b, pwr):  # think this is (x^2 (^3))
         if isinstance(d, const):
            return prod(b.get_base(), prod(b.get_deg(), const))
         else:
             raise Exception('pwr_deriv: case 2: ' + str(p))
-    elif isinstance(b, plus):#(x+2)^3
+    elif isinstance(b, plus):  # (x+2)^3
         if isinstance(d, const):
             return prod(d, pwr(b, d.get_val()-1))
         else:
@@ -62,20 +62,23 @@ def pwr_deriv(p):
 
 def prod_deriv(p):
     assert isinstance(p, prod)
-    m1 = p.get_mult1()#6
-    m2 = p.get_mult2()#x^3
-    #m1* deriv(m2) + deriv(m1)* m2 product rule
+    m1 = p.get_mult1()  # 6
+    m2 = p.get_mult2()  # x^3
     if isinstance(m1, const):
         if isinstance(m2, const):
             return const(0)
-        elif isinstance(m2, pwr):#6*(x^3)=> 6*3*(x^(3-1))
-             return prod(m1, deriv(m2))
-        elif isinstance(m2, plus):#3*(x+1)
+        elif isinstance(m2, pwr):  # 6*(x^3)=> 6*3*(x^(3-1))
+            # get 6 * 3
+            alt1 = prod(m1, m2.get_deg())
+            # get x^3-1
+            alt2 = pwr(m2.get_base(), plus(m2.get_deg(), const(-1)))
+            return prod(alt1, alt2)
+        elif isinstance(m2, plus):  # 3*(x+1)
             if isinstance(deriv(m2), const):
                 return const(0)
             else:
                 return prod(m1, deriv(m2))
-        elif isinstance(m2, prod):#4*(3x)
+        elif isinstance(m2, prod):  # 4*(3x)
             if isinstance(deriv(m2), const):
                 return const(0)
             else:
@@ -83,41 +86,27 @@ def prod_deriv(p):
         else:
             raise Exception('prod_deriv: case 0' + str(p))
     elif isinstance(m1, plus):
-        if isinstance(m2, const):#(x+1)*3
+        if isinstance(m2, const):  # (x+1)*3
             if isinstance(deriv(m2), const):
                 return const(0)
             else:
                 return prod(m1, deriv(m2))
-        elif isinstance(m2, pwr):#(1+x)*(2^3)
-            if isinstance(deriv(m2), const) and isinstance(deriv(m1), const):
-                return const(0)
-            else:
-                return prod(deriv(m1), deriv(m2))
-        elif isinstance(m2, plus):#(1+x)*(x+3)
-            if isinstance(deriv(m2), const) and isinstance(deriv(m1), const):
-                return const(0)
-            else:
-                return prod(deriv(m1), deriv(m2))
-        elif isinstance(m2, prod):#(3+x)*(2x)
-            if isinstance(deriv(m2), const) and isinstance(deriv(m1), const):
-                return const(0)
-            else:
-                return prod(deriv(m1), deriv(m2))
-        elif isinstance(m2, var):#3x
-            return m1
+        elif isinstance(m2, pwr):  # (1+x)*(2^3)
+            pass
+        elif isinstance(m2, plus):  # (1+x)*(x+3)
+            pass
+        elif isinstance(m2, prod):  # (3+x)*(2x)
+            pass
         else:
             raise Exception('prod_deriv: case 1:' + str(p))
     elif isinstance(m1, pwr):
-        if isinstance(m2, const):#(x^2)*3 => (2x^1)*3
+        if isinstance(m2, const):  # (x^2)*3 => (2x^1)*3
             if isinstance(deriv(m2), const):
                 return const(0)
             else:
                 return prod(deriv(m1), m2)
-        elif isinstance(m2, pwr):#(3^x)*(x^3)
-            if isinstance(deriv(m2), const):
-                return const(0)
-            else:
-                return prod(deriv(m1), m2)
+        elif isinstance(m2, pwr):
+            pass
         elif isinstance(m2, plus):
             pass
         elif isinstance(m2. prod):
@@ -145,6 +134,3 @@ def prod_deriv(p):
 
     else:
        raise Exception('prod_deriv: case 4:' + str(p))
-
-
-
