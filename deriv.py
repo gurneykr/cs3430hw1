@@ -62,13 +62,17 @@ def pwr_deriv(p):
 
 def prod_deriv(p):
     assert isinstance(p, prod)
-    m1 = p.get_mult1()
-    m2 = p.get_mult2()
+    m1 = p.get_mult1()#6
+    m2 = p.get_mult2()#x^3
     if isinstance(m1, const):
         if isinstance(m2, const):
             return const(0)
-        elif isinstance(m2, pwr):
-            return const(0)
+        elif isinstance(m2, pwr):#6*(x^3)=> 6*3*(x^(3-1))
+             a1 = prod(m2.get_deg(), m1)#=>3*6
+
+             a2 = pwr(m2.get_base, pwr_deriv(m2)-1)#3x^2
+             prod(m1, a2)
+
         elif isinstance(m2, plus):#3*(x+1)
             if isinstance(deriv(m2), const):
                 return const(0)
