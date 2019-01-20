@@ -68,11 +68,11 @@ def prod_deriv(p):
         if isinstance(m2, const):
             return const(0)
         elif isinstance(m2, pwr):#6*(x^3)=> 6*3*(x^(3-1))
-             a1 = prod(m2.get_deg(), m1)#=>3*6
-
-             a2 = pwr(m2.get_base, pwr_deriv(m2)-1)#3x^2
-             prod(m1, a2)
-
+             #get 6 * 3
+            alt1 = prod(m1, m2.get_deg())
+             #get x^3-1
+            alt2 = pwr(m2.get_base(), plus(m2.get_deg(),const(-1)))
+            return prod(alt1, alt2)
         elif isinstance(m2, plus):#3*(x+1)
             if isinstance(deriv(m2), const):
                 return const(0)

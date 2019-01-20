@@ -41,39 +41,55 @@ def pwr_tof(expr):
     if isinstance(expb, const):#expb^d
         def f(x):
             if isinstance(d, const):
-                return pwr(expb, d.get_val())
+                return math.pow(expb, d.get_val())
             elif isinstance(d, var):
-                return pwr(expb, x)
+                return math.pow(expb, x)
             elif isinstance(d, prod):
-                return pwr(expb, prod_tof(d)(x))
+                return math.pow(expb, prod_tof(d)(x))
             elif isinstance(d, plus):
-                return pwr(expb, plus_tof(d)(x))
+                return math.pow(expb, plus_tof(d)(x))
         return f
     elif isinstance(expb, var):
         if isinstance(d, const):#x^2
             def f(x):
-                return pwr(x, d.get_val())
+                return math.pow(x, d.get_val())
+            return f
+        elif isinstance(d, plus):
+            def f(x):
+                return math.pow(x, plus_tof(d)(x))
+            return f
+        elif isinstance(d, pwr):
+            def f(x):
+                return math.pow(x, pwr_tof(d)(x))
+            return f
+        elif isinstance(d, var):
+            def f(x):
+                return math.pow(x, x)
+            return f
+        elif isinstance(d, prod):
+            def f(x):
+                return math.pow(x, prod_tof(d)(x))
             return f
         else:
             raise Exception('pw_tof: case 1:' + str(expr))
     elif isinstance(expb, plus):
         if isinstance(d, const):#(1+x)^3
             def f(x):
-                return pwr( plus_tof(expb)(x), d.get_val())
+                return math.pow( plus_tof(expb)(x), d.get_val())
             return f
         else:
             raise Exception('pw_tof: case 2:' + str(expr))
     elif isinstance(expb, pwr):#(x^2)^2
         if isinstance(d, const):
             def f(x):
-                return pwr( pwr_tof(expb)(x), d.get_val())
+                return math.pow( pwr_tof(expb)(x), d.get_val())
             return f
         else:
             raise Exception('pw_tof: case 3:' + str(expr))
     elif isinstance(expb, prod):
         if isinstance(d, const):#4^(3x)
             def f(x):
-                return pwr(prod_tof(expb)(x), d.get_val())
+                return math.pow(prod_tof(expb)(x), d.get_val())
             return f
         else:
             raise Exception('pw_tof: case 4:' + str(expr))
@@ -113,11 +129,11 @@ def prod_tof(expr):
             return f
         elif isinstance(m2, pwr):
             def f(x):
-                return prod_tof(m2)(x)*pwr_tof(m2)(x)
+                return prod_tof(m1)(x)*pwr_tof(m2)(x)
             return f
         elif isinstance(m2, plus):
             def f(x):
-                return prod_tof(m2)(x)*plus_tof(m2)(x)
+                return prod_tof(m1)(x)*plus_tof(m2)(x)
             return f
     elif isinstance(m1, pwr):
         if isinstance(m2, const):
