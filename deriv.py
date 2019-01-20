@@ -64,15 +64,12 @@ def prod_deriv(p):
     assert isinstance(p, prod)
     m1 = p.get_mult1()#6
     m2 = p.get_mult2()#x^3
+    #m1* deriv(m2) + deriv(m1)* m2 product rule
     if isinstance(m1, const):
         if isinstance(m2, const):
             return const(0)
         elif isinstance(m2, pwr):#6*(x^3)=> 6*3*(x^(3-1))
-             #get 6 * 3
-            alt1 = prod(m1, m2.get_deg())
-             #get x^3-1
-            alt2 = pwr(m2.get_base(), plus(m2.get_deg(),const(-1)))
-            return prod(alt1, alt2)
+             return prod(m1, deriv(m2))
         elif isinstance(m2, plus):#3*(x+1)
             if isinstance(deriv(m2), const):
                 return const(0)
@@ -92,11 +89,22 @@ def prod_deriv(p):
             else:
                 return prod(m1, deriv(m2))
         elif isinstance(m2, pwr):#(1+x)*(2^3)
-            pass
+            if isinstance(deriv(m2), const) and isinstance(deriv(m1), const):
+                return const(0)
+            else:
+                return prod(deriv(m1), deriv(m2))
         elif isinstance(m2, plus):#(1+x)*(x+3)
-            pass
+            if isinstance(deriv(m2), const) and isinstance(deriv(m1), const):
+                return const(0)
+            else:
+                return prod(deriv(m1), deriv(m2))
         elif isinstance(m2, prod):#(3+x)*(2x)
-            pass
+            if isinstance(deriv(m2), const) and isinstance(deriv(m1), const):
+                return const(0)
+            else:
+                return prod(deriv(m1), deriv(m2))
+        elif isinstance(m2, var):#3x
+            return m1
         else:
             raise Exception('prod_deriv: case 1:' + str(p))
     elif isinstance(m1, pwr):
@@ -105,8 +113,11 @@ def prod_deriv(p):
                 return const(0)
             else:
                 return prod(deriv(m1), m2)
-        elif isinstance(m2, pwr):
-            pass
+        elif isinstance(m2, pwr):#(3^x)*(x^3)
+            if isinstance(deriv(m2), const):
+                return const(0)
+            else:
+                return prod(deriv(m1), m2)
         elif isinstance(m2, plus):
             pass
         elif isinstance(m2. prod):
