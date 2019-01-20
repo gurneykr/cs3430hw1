@@ -8,6 +8,7 @@
 
 import unittest
 from prod import prod
+from plus import plus
 from maker import make_const, make_pwr
 from tof import tof
 from deriv import deriv
@@ -48,6 +49,22 @@ class DerivUnitTests(unittest.TestCase):
             assert abs(drvf(i) - gt(i)) <= err
         print ('Unit Test 02: pass')
 
+    def test_03(self):
+        print('\n***** Unit Test 03 ************')
+        #5(x^2)+10x-100
+        fex1 = plus(elt1=prod(mult1=make_const(5.0),
+                              mult2=make_pwr('x', 2.0)),
+                    elt2=prod(mult1=make_const(10.0),
+                              mult2=make_pwr('x', 1.0)))
+        fex2 = plus(elt1=fex1, elt2=make_const(-100.0))
+        drv = deriv(fex2)
+        assert not drv is None
+        drvf = tof(drv)
+        # gt = lambda x: (x ** (-2.0 / 3.0))
+        # err = 0.00001
+        # for i in range(1, 100):
+        #     assert abs(drvf(i) - gt(i)) <= err
+        print('Unit Test 03: pass')
     def runTest(self):
         pass
 

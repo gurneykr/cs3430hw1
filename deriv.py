@@ -91,6 +91,12 @@ def prod_deriv(p):
                 return const(0)
             else:
                 return prod(m1, deriv(m2))
+        elif isinstance(m2, pwr):#(1+x)*(2^3)
+            pass
+        elif isinstance(m2, plus):#(1+x)*(x+3)
+            pass
+        elif isinstance(m2, prod):#(3+x)*(2x)
+            pass
         else:
             raise Exception('prod_deriv: case 1:' + str(p))
     elif isinstance(m1, pwr):
@@ -99,6 +105,12 @@ def prod_deriv(p):
                 return const(0)
             else:
                 return prod(deriv(m1), m2)
+        elif isinstance(m2, pwr):
+            pass
+        elif isinstance(m2, plus):
+            pass
+        elif isinstance(m2. prod):
+            pass
         else:
             raise Exception('prod_deriv: case 2:' + str(p))
     elif isinstance(m1, prod):
@@ -107,8 +119,19 @@ def prod_deriv(p):
                 return const(0)
             else:
                 return prod(deriv(m1), m2)
+        elif isinstance(m2, pwr):
+            pass
+        elif isinstance(m2, plus):
+            pass
+        elif isinstance(m2, prod):
+            pass
+            # if isinstance(deriv(m2), const):
+            #     return const(0)
+            # else:
+            #     return prod(deriv(m1), m2)
         else:
             raise Exception('prod_deriv: case 3:' + str(p))
+
     else:
        raise Exception('prod_deriv: case 4:' + str(p))
 
