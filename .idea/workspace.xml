@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="46bb0e22-770d-4eaf-aac0-50ed0a419eba" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deriv.py" afterPath="$PROJECT_DIR$/deriv.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tof.py" afterPath="$PROJECT_DIR$/tof.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unit_tests.py" afterPath="$PROJECT_DIR$/unit_tests.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +22,8 @@
       <file leaf-file-name="deriv.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/deriv.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1036">
-              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="254">
+              <caret line="40" column="32" lean-forward="true" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
               <folding>
                 <element signature="e#115#134#0" expanded="true" />
               </folding>
@@ -73,8 +74,8 @@
       <file leaf-file-name="unit_tests.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/unit_tests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="606">
-              <caret line="90" column="12" lean-forward="true" selection-start-line="90" selection-start-column="12" selection-end-line="90" selection-end-column="46" />
+            <state relative-caret-position="680">
+              <caret line="164" column="12" lean-forward="true" selection-start-line="164" selection-start-column="12" selection-end-line="164" selection-end-column="12" />
               <folding>
                 <element signature="e#290#327#0" expanded="true" />
               </folding>
@@ -85,7 +86,7 @@
       <file leaf-file-name="tof.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tof.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
+            <state relative-caret-position="510">
               <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
               <folding />
             </state>
@@ -122,17 +123,18 @@
       <list>
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/../cs3430_s19_lec01/py/lec01_01.py" />
-        <option value="$PROJECT_DIR$/tof.py" />
         <option value="$PROJECT_DIR$/graphdrv.py" />
-        <option value="$PROJECT_DIR$/unit_tests.py" />
+        <option value="$PROJECT_DIR$/tof.py" />
         <option value="$PROJECT_DIR$/deriv.py" />
+        <option value="$PROJECT_DIR$/unit_tests.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-14" />
-    <option name="width" value="3868" />
-    <option name="height" value="2074" />
+    <option name="x" value="-16" />
+    <option name="y" value="-16" />
+    <option name="width" value="3872" />
+    <option name="height" value="2092" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -408,51 +410,51 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_unit_tests - 2019.01.26 at 18h 20m 43s.xml">
+    <history-entry file="Unittests_in_unit_tests - 2019.01.26 at 18h 49m 14s.xml">
       <configuration name="Unittests in unit_tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_unit_tests - 2019.01.26 at 18h 20m 58s.xml">
+    <history-entry file="Unittests_in_unit_tests - 2019.01.26 at 18h 50m 07s.xml">
       <configuration name="Unittests in unit_tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_unit_tests - 2019.01.26 at 18h 21m 09s.xml">
+    <history-entry file="Unittests_in_unit_tests - 2019.01.26 at 18h 50m 55s.xml">
       <configuration name="Unittests in unit_tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_unit_tests - 2019.01.26 at 18h 21m 19s.xml">
+    <history-entry file="Unittests_in_unit_tests - 2019.01.26 at 18h 53m 53s.xml">
       <configuration name="Unittests in unit_tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_unit_tests - 2019.01.26 at 18h 21m 30s.xml">
+    <history-entry file="Unittests_in_unit_tests - 2019.01.26 at 19h 09m 47s.xml">
       <configuration name="Unittests in unit_tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_unit_tests - 2019.01.26 at 18h 22m 31s.xml">
+    <history-entry file="Unittests_in_unit_tests - 2019.01.26 at 19h 15m 18s.xml">
       <configuration name="Unittests in unit_tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_unit_tests - 2019.01.26 at 18h 26m 07s.xml">
+    <history-entry file="Unittests_in_unit_tests - 2019.01.26 at 19h 16m 21s.xml">
       <configuration name="Unittests in unit_tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_unit_tests - 2019.01.26 at 18h 27m 27s.xml">
+    <history-entry file="Unittests_in_unit_tests - 2019.01.26 at 19h 18m 27s.xml">
       <configuration name="Unittests in unit_tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_unit_tests - 2019.01.26 at 18h 32m 01s.xml">
+    <history-entry file="Unittests_in_unit_tests - 2019.01.26 at 19h 25m 01s.xml">
       <configuration name="Unittests in unit_tests" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_unit_tests - 2019.01.26 at 18h 35m 24s.xml">
+    <history-entry file="Unittests_in_unit_tests - 2019.01.26 at 19h 30m 22s.xml">
       <configuration name="Unittests in unit_tests" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-14" y="0" width="3868" height="2074" extended-state="0" />
+    <frame x="-16" y="-16" width="3872" height="2092" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15425251" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1540897" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38457206" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995495" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43756968" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995495" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41216215" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3209083" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -467,14 +469,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/unit_tests.py</url>
-          <line>85</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="13" />
+      <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -678,14 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pwr.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/graphdrv.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1465">
@@ -734,28 +721,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tof.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pwr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/deriv.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1036">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state relative-caret-position="254">
+          <caret line="40" column="32" lean-forward="true" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
           <folding>
             <element signature="e#115#134#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tof.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/unit_tests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="90" column="12" lean-forward="true" selection-start-line="90" selection-start-column="12" selection-end-line="90" selection-end-column="46" />
+        <state relative-caret-position="680">
+          <caret line="164" column="12" lean-forward="true" selection-start-line="164" selection-start-column="12" selection-end-line="164" selection-end-column="12" />
           <folding>
             <element signature="e#290#327#0" expanded="true" />
           </folding>

@@ -75,6 +75,22 @@ class Assign01UnitTests(unittest.TestCase):
         print('Assign 01: Unit Test 04: pass')
 
     def test_assgn_01_ut_05(self):
+        print('\n***** Debug ************')
+        fex1 = make_pwr('x', 3.0)  # x^3 +5x
+        drv = deriv(fex1)
+        print(drv)
+        assert not drv is None
+        drvf = tof(drv)
+        assert not drvf is None
+        gt = lambda x: 3.0 * (x ** 2)
+        err = 0.00001
+        print('drvf(1): ',drvf(1))
+        print('gt(1):',gt(1))
+        for i in range(-100, 100):
+            assert abs(drvf(i) - gt(i)) <= err
+        print('Assign 01: Unit Test 05: pass')
+
+    def test_assgn_01_ut_05(self):
         print('\n***** Assign 01: Unit Test 05 ************')
         fex1 = make_pwr('x', 3.0)#x^3 +5x
         fex2 = prod(mult1=make_const(5.0),
@@ -87,62 +103,63 @@ class Assign01UnitTests(unittest.TestCase):
         assert not drvf is None
         gt = lambda x: 3.0*(x**2) + 5.0
         err = 0.00001
+        print(drvf(1))
         for i in range(-100, 100):
             assert abs(drvf(i) - gt(i)) <= err
         print('Assign 01: Unit Test 05: pass')
 
-    # def test_assgn_01_ut_06(self):
-    #     print('\n***** Assign 01: Unit Test 06 ************')
-    #     fex1 = prod(mult1=make_const(2.0),
-    #                 mult2=make_pwr('x', 7.0))
-    #     fex2 = plus(elt1=prod(mult1=make_const(-1.0),
-    #                           mult2=make_pwr('x', 5.0)),
-    #                 elt2=make_const(8.0))
-    #     p = plus(elt1=fex1, elt2=fex2)
-    #     drv = deriv(p)
-    #     assert not drv is None
-    #     drvf = tof(drv)
-    #     assert not drvf is None
-    #     gt = lambda x: 14.0*(x**6) - 5.0*(x**4)
-    #     err = 0.00001
-    #     for i in range(-100, -1):
-    #         assert abs(drvf(i) - gt(i)) <= err
-    #     for i in range(1, 100):
-    #         assert abs(drvf(i) - gt(i)) <= err
-    #     print('Assign 01: Unit Test 06: pass')
-    #
-    # def test_assgn_01_ut_01(self):
-    #     print('\n***** Assign 01: Unit Test 01 ************')
-    #     prd = prod(mult1=make_const(2.0),
-    #                mult2=make_pwr('x', 5.0))
-    #     graph_drv(prd, [-3.0, 3.0], [-50, 50.0])
-    #     print('Assign 01: Unit Test 01: pass')
-    #
-    # def test_assgn_01_ut_02(self):
-    #     print('\n***** Assign 01: Unit Test 02 ************')
-    #     fex1 = make_pwr('x', 4.0)
-    #     fex2 = make_pwr('x', 3.0)
-    #     fex3 = make_pwr('x', 1.0)
-    #     fex4 = plus(elt1=fex1, elt2=fex2)
-    #     fex5 = plus(elt1=fex4, elt2=fex3)
-    #     graph_drv(fex5, [-2.5, 2.5], [-10.0, 10.0])
-    #     print('Assign 01: Unit Test 02: pass')
-    #
-    # def test_assgn_01_prob_02_ut_03(self):
-    #     print('\n***** Assign 01: Unit Test 03 ************')
-    #     fex1 = prod(mult1=make_const(-1.0),
-    #                 mult2=make_pwr('x', 2.0))
-    #     fex2 = plus(elt1=fex1, elt2=make_const(2.0))
-    #     graph_drv(fex2, [-10, 10], [-50.0, 25.0])
-    #     print('Assign 01: Unit Test 03: pass')
-    #
-    # def test_assgn_01_prob_02_ut_04(self):
-    #     print('\n***** Assign 01: Unit Test 04 ************')
-    #     fex1 = prod(mult1=make_const(2),
-    #                 mult2=make_pwr('x', 2.0))
-    #     fex2 = plus(elt1=fex1, elt2=make_const(2.0))
-    #     graph_drv(fex2, [-10, 10], [-50.0, 50.0])
-    #     print('Assign 01: Unit Test 04: pass')
+    def test_assgn_01_ut_06(self):
+        print('\n***** Assign 01: Unit Test 06 ************')
+        fex1 = prod(mult1=make_const(2.0),
+                    mult2=make_pwr('x', 7.0))
+        fex2 = plus(elt1=prod(mult1=make_const(-1.0),
+                              mult2=make_pwr('x', 5.0)),
+                    elt2=make_const(8.0))
+        p = plus(elt1=fex1, elt2=fex2)
+        drv = deriv(p)
+        assert not drv is None
+        drvf = tof(drv)
+        assert not drvf is None
+        gt = lambda x: 14.0*(x**6) - 5.0*(x**4)
+        err = 0.00001
+        for i in range(-100, -1):
+            assert abs(drvf(i) - gt(i)) <= err
+        for i in range(1, 100):
+            assert abs(drvf(i) - gt(i)) <= err
+        print('Assign 01: Unit Test 06: pass')
+
+    def test_assgn_01_ut_01(self):
+        print('\n***** Assign 01: Unit Test 01 ************')
+        prd = prod(mult1=make_const(2.0),
+                   mult2=make_pwr('x', 5.0))
+        graph_drv(prd, [-3.0, 3.0], [-50, 50.0])
+        print('Assign 01: Unit Test 01: pass')
+
+    def test_assgn_01_ut_02(self):
+        print('\n***** Assign 01: Unit Test 02 ************')
+        fex1 = make_pwr('x', 4.0)
+        fex2 = make_pwr('x', 3.0)
+        fex3 = make_pwr('x', 1.0)
+        fex4 = plus(elt1=fex1, elt2=fex2)
+        fex5 = plus(elt1=fex4, elt2=fex3)
+        graph_drv(fex5, [-2.5, 2.5], [-10.0, 10.0])
+        print('Assign 01: Unit Test 02: pass')
+
+    def test_assgn_01_prob_02_ut_03(self):
+        print('\n***** Assign 01: Unit Test 03 ************')
+        fex1 = prod(mult1=make_const(-1.0),
+                    mult2=make_pwr('x', 2.0))
+        fex2 = plus(elt1=fex1, elt2=make_const(2.0))
+        graph_drv(fex2, [-10, 10], [-50.0, 25.0])
+        print('Assign 01: Unit Test 03: pass')
+
+    def test_assgn_01_prob_02_ut_04(self):
+        print('\n***** Assign 01: Unit Test 04 ************')
+        fex1 = prod(mult1=make_const(2),
+                    mult2=make_pwr('x', 2.0))
+        fex2 = plus(elt1=fex1, elt2=make_const(2.0))
+        graph_drv(fex2, [-10, 10], [-50.0, 50.0])
+        print('Assign 01: Unit Test 04: pass')
 
     def runTest(self):
         pass
